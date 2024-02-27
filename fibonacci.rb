@@ -11,26 +11,16 @@
 
 # p fibs(8)
 
-def fib_rec(n)
-	if n < 2
-		n
-	else
-		fib_rec(n-1) + fib_rec(n-2)
-	end
+def fibs_rec(n)
+	return n if n < 2
+	fibs_rec(n-1) + fibs_rec(n-2)
 end
 
 def fibs(n, result = [])
 	n.times do
-		result << fib_rec(n)
+		result << fibs_rec(n)
 		n -= 1
 	end
 	result.reverse
 end
 p fibs(8)
-
-# def fibs_rec(n)
-#   return [0, 1] if n < 2
-
-#   arr = fibs_rec(n - 1)
-#   arr << (arr[-1] + arr[-2])
-# end
